@@ -1,0 +1,931 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#07111f;
+    color:#fff;
+    font-family:Montserrat,sans-serif;
+    overflow-x:hidden;
+}
+
+.scene{
+    min-height:100vh;
+    padding:70px 7%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hidden{
+    display:none!important;
+}
+
+.eyebrow{
+    letter-spacing:5px;
+    font-size:10px;
+    color:#a9c7e8;
+    margin-bottom:22px;
+}
+
+.scene h1,
+.scene h2{
+    font:600 clamp(60px,9vw,115px)/.85 "Cormorant Garamond",serif;
+}
+
+.scene h2 i,
+.scene h3 i{
+    font-family:Parisienne,cursive;
+    color:#9fc4e8;
+    font-weight:400;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+    position:relative;
+    z-index:10;
+    margin-top:32px;
+    padding:17px 30px;
+    border:1px solid rgba(255,255,255,.2);
+    background:linear-gradient(135deg,#4d83b8,#234a70);
+    color:#fff;
+    letter-spacing:2px;
+    font-size:10px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.4s;
+    box-shadow:0 15px 40px #0d2942;
+}
+
+.btn:hover{
+    transform:translateY(-6px) scale(1.04);
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading{
+    background:radial-gradient(circle,#142d46,#050b13);
+}
+
+.loader-box{
+    width:min(500px,90%);
+}
+
+.system{
+    letter-spacing:6px;
+    color:#78a9d4;
+    font-size:10px;
+}
+
+.loading h1{
+    font:50px "Cormorant Garamond",serif;
+    margin:25px;
+}
+
+.bar{
+    height:3px;
+    background:#17334c;
+}
+
+.bar i{
+    display:block;
+    height:100%;
+    width:0;
+    background:#4e8bc0;
+    animation:load 4s forwards;
+}
+
+.loading #loadText{
+    font-size:11px;
+    color:#7189a3;
+    margin-top:18px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:radial-gradient(
+        circle,
+        #214d73,
+        #0b1826 55%,
+        #050b13
+    );
+}
+
+.name{
+    font-size:clamp(100px,18vw,240px);
+    letter-spacing:10px;
+    animation:glow 2s infinite alternate;
+}
+
+.heart,
+.hugeheart,
+.finalheart{
+    font-size:90px;
+    color:#78b5e8;
+    filter:drop-shadow(0 0 30px #78b5e8);
+    animation:beat 1.4s infinite;
+}
+
+.hero p,
+.caught p,
+.cake p,
+.celebration p,
+.finale p{
+    color:#b7cde2;
+    line-height:1.8;
+}
+
+.rings{
+    position:absolute;
+    width:75vw;
+    height:75vw;
+    border:1px solid #315f8744;
+    border-radius:50%;
+    animation:pulse 5s infinite;
+    pointer-events:none;
+}
+
+.danger{
+    background:linear-gradient(135deg,#4d83b8,#234a70);
+}
+
+
+/* =========================
+   CAUGHT
+========================= */
+
+.caught{
+    background:linear-gradient(
+        130deg,
+        #0a1623,
+        #1f4668,
+        #07111c
+    );
+}
+
+.warning{
+    font-size:100px;
+    color:#8fc5f2;
+    filter:drop-shadow(0 0 20px #8fc5f2);
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake{
+    background:radial-gradient(
+        circle,
+        #193d5c,
+        #07111f 70%
+    );
+}
+
+.cakeWrap{
+    width:300px;
+    height:330px;
+    position:relative;
+    margin:25px;
+}
+
+.cakeBody{
+    position:absolute;
+    bottom:65px;
+    left:25px;
+    width:250px;
+    height:110px;
+    border-radius:10px 10px 40px 40px;
+    background:linear-gradient(#6199c7,#315f87);
+    box-shadow:
+        inset 0 -18px #234b6d,
+        0 25px 40px #000;
+}
+
+.cakeTop{
+    position:absolute;
+    bottom:160px;
+    left:38px;
+    width:224px;
+    height:45px;
+    background:#dceaf5;
+    border-radius:50px 50px 10px 10px;
+    z-index:2;
+}
+
+.plate{
+    position:absolute;
+    bottom:45px;
+    left:0;
+    width:300px;
+    height:20px;
+    border-radius:50%;
+    background:#d7e5f0;
+}
+
+.candle{
+    position:absolute;
+    bottom:205px;
+    width:13px;
+    height:75px;
+    background:repeating-linear-gradient(
+        45deg,
+        #fff 0 8px,
+        #5b91bd 8px 15px
+    );
+    z-index:4;
+}
+
+.a{
+    left:80px;
+}
+
+.b{
+    left:143px;
+}
+
+.c{
+    left:207px;
+}
+
+.candle b{
+    position:absolute;
+    top:-28px;
+    left:-3px;
+    width:20px;
+    height:30px;
+    background:#d7ecff;
+    border-radius:50%;
+    box-shadow:0 0 20px #8bc5f5;
+    animation:flicker .3s infinite alternate;
+}
+
+
+/* =========================
+   CELEBRATION
+========================= */
+
+.celebration,
+.finale{
+    background:radial-gradient(
+        circle,
+        #214d73,
+        #07111f 70%
+    );
+}
+
+.popper{
+    position:absolute;
+    font-size:80px;
+    top:25%;
+    animation:pop 1s infinite alternate;
+}
+
+.popper.left{
+    left:6%;
+}
+
+.popper.right{
+    right:6%;
+    animation-delay:.4s;
+}
+
+
+/* =========================
+   MEMORY INTRO
+========================= */
+
+.memoryIntro{
+    background:linear-gradient(
+        135deg,
+        #07111f,
+        #1d4668,
+        #07111f
+    );
+}
+
+.scan{
+    margin:35px;
+    padding:20px;
+    border:1px solid #426f96;
+    color:#a8c9e8;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.scan span{
+    display:inline-block;
+    width:60px;
+    height:2px;
+    background:#6da9dc;
+    animation:scan 1s infinite;
+}
+
+
+/* =========================
+   MEMORY VAULT
+========================= */
+
+.vault{
+    background:radial-gradient(
+        circle at center,
+        #1d4668,
+        #07111f 65%
+    );
+    text-align:center;
+}
+
+.vault-card{
+    position:relative;
+    z-index:2;
+    width:min(620px,92vw);
+    padding:55px 35px;
+    border:1px solid #416f96;
+    background:linear-gradient(
+        145deg,
+        #102a40aa,
+        #071522dd
+    );
+    box-shadow:
+        0 0 70px #3d78a633,
+        inset 0 0 40px #ffffff05;
+    backdrop-filter:blur(10px);
+}
+
+.vault-lock{
+    font-size:70px;
+    filter:drop-shadow(0 0 20px #75b4e8);
+    margin-bottom:15px;
+    animation:beat 1.5s infinite;
+}
+
+.vault-card>p:not(.eyebrow):not(#vaultMessage){
+    color:#a9c7df;
+    line-height:1.8;
+    margin:22px auto;
+}
+
+.vault-card input{
+    display:block;
+    width:min(420px,100%);
+    margin:30px auto 0;
+    padding:18px;
+    background:#050b13;
+    border:1px solid #416f96;
+    color:#fff;
+    text-align:center;
+    letter-spacing:3px;
+    font-size:11px;
+    outline:none;
+}
+
+.vault-card input:focus{
+    border-color:#8fc8f5;
+    box-shadow:0 0 25px #4b8fc422;
+}
+
+#vaultMessage{
+    min-height:28px;
+    margin-top:20px;
+    color:#a7ccec;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+.vault-ring{
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid #4c80a633;
+    border-radius:50%;
+    animation:pulse 4s infinite;
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories{
+    display:block;
+    background:linear-gradient(
+        #07111f,
+        #193d5c,
+        #07111f
+    );
+    padding-top:110px;
+}
+
+.head{
+    max-width:700px;
+    margin:0 auto 50px;
+}
+
+.head>p:last-child{
+    color:#829bb5;
+    margin-top:20px;
+}
+
+
+/* =========================
+   3 LARGE PHOTOS
+========================= */
+
+.photoStage{
+    width:min(1050px,92vw);
+    height:650px;
+    margin:50px auto 0;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    grid-template-rows:1fr 1fr;
+
+    gap:18px;
+}
+
+
+/* كل صورة */
+
+.shot{
+    position:relative;
+    width:100%;
+    height:100%;
+
+    background:#edf4fa;
+
+    padding:12px 12px 45px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+    overflow:hidden;
+}
+
+
+/* ظهور الصورة */
+
+.shot.show{
+    opacity:1;
+    transform:none;
+}
+
+
+/* Hover */
+
+.shot:hover{
+    transform:scale(1.02);
+    z-index:5;
+}
+
+
+/* الصورة نفسها */
+
+.shot img{
+    width:100%;
+    height:100%;
+
+      object-fit:contain;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.shot:hover img{
+    transform:scale(1.03);
+}
+
+
+/* الكلام أسفل الصورة */
+
+.shot em{
+    position:absolute;
+
+    bottom:11px;
+    left:0;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#244765;
+
+    font:22px Parisienne,cursive;
+}
+
+
+/* الصورة الأولى كبيرة */
+
+.shot.s1{
+    grid-column:1;
+    grid-row:1 / 3;
+}
+
+
+/* الصورة الثانية */
+
+.shot.s2{
+    grid-column:2;
+    grid-row:1;
+}
+
+
+/* الصورة الثالثة */
+
+.shot.s3{
+    grid-column:2;
+    grid-row:2;
+}
+
+
+/* زر الرسالة */
+
+.last{
+    margin:70px auto;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letterScene{
+    background:radial-gradient(
+        circle,
+        #163753,
+        #07111f 70%
+    );
+}
+
+.envelope{
+    width:430px;
+    height:290px;
+    background:#315f87;
+    position:relative;
+    margin:35px;
+    cursor:pointer;
+    filter:drop-shadow(0 25px 35px #000);
+}
+
+.paper{
+    position:absolute;
+    left:28px;
+    top:25px;
+    width:374px;
+    min-height:230px;
+    height:auto;
+    background:#edf4fa;
+    color:#284965;
+    text-align:left;
+    padding:30px;
+    z-index:2;
+    transition:1s;
+}
+
+.paper>p{
+    font:30px Parisienne,cursive;
+    margin-bottom:15px;
+}
+
+.paper #letterText{
+    font-size:13px;
+    line-height:1.8;
+    white-space:pre-wrap;
+    min-height:80px;
+}
+
+.paper strong{
+    display:block;
+    margin-top:15px;
+    font:25px Parisienne,cursive;
+    color:#477fab;
+}
+
+.flap{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:215px solid transparent;
+    border-right:215px solid transparent;
+    border-top:145px solid #477fab;
+    transform-origin:top;
+    z-index:4;
+    transition:1s;
+}
+
+.seal{
+    position:absolute;
+    z-index:5;
+    left:190px;
+    top:120px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#244e70;
+    color:#c5ddf2;
+}
+
+.envelope.open .flap{
+    transform:rotateX(180deg);
+    z-index:1;
+}
+
+.envelope.open .seal{
+    display:none;
+}
+
+.envelope.open .paper{
+    transform:translateY(-130px);
+    z-index:6;
+}
+
+.tap{
+    font-size:10px;
+    color:#a9bfd5;
+    letter-spacing:3px;
+}
+
+.tiny{
+    margin-top:80px;
+    background:none;
+    border:0;
+    color:#7fa2bf;
+    font-size:25px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift{
+    background:radial-gradient(
+        circle,
+        #183c5b,
+        #07111f
+    );
+}
+
+.giftbox{
+    margin:35px;
+    cursor:pointer;
+}
+
+.box{
+    font-size:100px;
+    filter:drop-shadow(0 20px 20px #000);
+    transition:.5s;
+}
+
+.giftbox.open .box{
+    transform:scale(1.3) rotate(8deg);
+}
+
+.lid{
+    width:100px;
+    height:18px;
+    background:#568db9;
+    margin:auto;
+    border-radius:5px;
+}
+
+
+/* =========================
+   FINALE
+========================= */
+
+.finale h3{
+    font:600 clamp(60px,10vw,130px)/.8 "Cormorant Garamond",serif;
+    margin-top:15px;
+}
+
+.finale .sign{
+    font:20px Parisienne,cursive;
+    color:#9fc9ef;
+}
+
+.restart{
+    margin-top:30px;
+    background:none;
+    border:0;
+    color:#91b0cb;
+    letter-spacing:3px;
+    font-size:10px;
+    cursor:pointer;
+}
+
+.finalPhotos{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.finalPhotos img{
+    position:absolute;
+    width:130px;
+    height:130px;
+    object-fit:cover;
+    opacity:.3;
+    animation:float 5s infinite alternate;
+}
+
+
+/* =========================
+   LIGHTBOX + EFFECTS
+========================= */
+
+#confetti,
+#fx{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:50;
+}
+
+#lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:100;
+    background:#000e;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+#lightbox.show{
+    display:flex;
+}
+
+#lightbox img{
+    max-width:90vw;
+    max-height:90vh;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes load{
+    to{
+        width:100%;
+    }
+}
+
+@keyframes glow{
+    to{
+        text-shadow:
+            0 0 40px #75b5e8,
+            0 0 100px #285b83;
+    }
+}
+
+@keyframes beat{
+    50%{
+        transform:scale(1.13);
+    }
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.1);
+        opacity:.3;
+    }
+}
+
+@keyframes flicker{
+    to{
+        transform:scale(.8,1.15);
+    }
+}
+
+@keyframes pop{
+    to{
+        transform:translateY(-30px) rotate(15deg);
+    }
+}
+
+@keyframes scan{
+    50%{
+        transform:translateX(80px);
+    }
+}
+
+@keyframes float{
+    to{
+        transform:translateY(-35px) rotate(12deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .scene{
+        padding:50px 5%;
+    }
+
+    .name{
+        font-size:clamp(70px,20vw,150px);
+        letter-spacing:5px;
+    }
+
+
+    /* الصور على الموبايل */
+
+    .photoStage{
+        width:90vw;
+        height:auto;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        gap:20px;
+
+        padding:0;
+    }
+
+    .shot,
+    .shot.s1,
+    .shot.s2,
+    .shot.s3{
+        width:100%;
+        height:330px;
+
+        flex:none;
+
+        grid-column:auto;
+        grid-row:auto;
+
+        margin:0;
+    }
+
+    .shot img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+    .shot em{
+        font-size:20px;
+    }
+
+
+    /* باقي الصفحة */
+
+    .envelope{
+        transform:scale(.75);
+        margin:-15px -45px;
+    }
+
+    .envelope.open{
+        margin-bottom:160px;
+    }
+
+    .paper{
+        min-height:240px;
+    }
+
+    .popper{
+        font-size:45px;
+    }
+
+    .vault-ring{
+        width:400px;
+        height:400px;
+    }
+}
